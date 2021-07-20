@@ -32,7 +32,97 @@ board = []
 j = 0
 for i in range(42):
     board.append(" ")
+empty_list = [" "," "," "," "," "," "]
+b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
+b2 =  [board[36],board[29],board[22],board[15],board[8],board[1]]
+b3 =  [board[37],board[30],board[23],board[16],board[9],board[2]]
+b4 =  [board[38],board[31],board[24],board[17],board[10],board[3]]
+b5 =  [board[39],board[32],board[25],board[18],board[11],board[4]]
+b6 =  [board[40],board[33],board[26],board[19],board[12],board[5]]
+b7 =  [board[41],board[34],board[27],board[20],board[13],board[6]]
+print(b1[0])
+i = 0
+check1 = 0
+check2 = 0
+check3 = 0
+check4 = 0
+check5 = 0
+check6 = 0
+check7 = 0
+print_board(board)
 while True:
+    #print_board(board)
+    val = input("J1 choisi une colonne: ")
+    if val == "1":
+        for i in b1:
+            if b1 == empty_list:
+                board[35 - check1] = "X"
+        check1 = check1 + 7
+    if val == "2":
+        for i in b2:
+            if b2 == empty_list:
+                board[36 - check2] = "X"
+        check2 = check2 + 7
+    if val == "3":
+        for i in b3:
+            if b3 == empty_list:
+                board[37 - check3] = "X"
+        check3 = check3 + 7
+    if val == "4":
+        for i in b4:
+            if b4 == empty_list:
+                board[38 - check4] = "X"
+        check4 = check4 + 7
+    if val == "5":
+        for i in b5:
+            if b5 == empty_list:
+                board[39 - check5] = "X"
+        check5 = check5 + 7
+    if val == "6":
+        for i in b6:
+            if b6 == empty_list:
+                board[40 - check6] = "X"
+        check6 = check6 + 7
+    if val == "7":
+        for i in b7:
+            if b7 == empty_list:
+                board[41 - check7] = "X"
+        check7 = check7 + 7
     print_board(board)
-    val = input("Choisi une colonne: ")
-    board[int(val) - 1] = "X"
+    val2 = input("J2 choisi une colonne: ")
+    if val2 == "1":
+        for i in b1:
+            if b1 == empty_list:
+                board[35 - check1] = "O"
+        check1 = check1 + 7
+    if val2 == "2":
+        for i in b2:
+            if b2 == empty_list:
+                board[36 - check2] = "O"
+        check2 = check2 + 7
+    if val2 == "3":
+        for i in b3:
+            if b3 == empty_list:
+                board[37 - check3] = "O"
+        check3 = check3 + 7
+    if val2 == "4":
+        for i in b4:
+            if b4 == empty_list:
+                board[38 - check4] = "O"
+        check4 = check4 + 7
+    if val2 == "5":
+        for i in b5:
+            if b5 == empty_list:
+                board[39 - check5] = "O"
+        check5 = check5 + 7
+    if val2 == "6":
+        for i in b6:
+            if b6 == empty_list:
+                board[40 - check6] = "O"
+        check6 = check6 + 7
+    if val2 == "7":
+        for i in b7:
+            if b7 == empty_list:
+                board[41 - check7] = "O"
+        check7 = check7 + 7
+    print_board(board)
