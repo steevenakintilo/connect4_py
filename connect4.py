@@ -7,12 +7,23 @@
 ##
 
 import sys
-from os import system     
+from termcolor import colored, cprint
+from os import system
+#import os
+#os.system('')
 from random import randint
+#import os
 
 system("clear")
-def random_nbr():         
-    return(randint(1, 7))
+
+def print_blue(c):
+    print("\033[1;34;40m%s  \n" % (c))
+
+def random_nbr(nb):
+    if nb == 1:
+         return(randint(nb, nb + 1))
+    if nb != 1:
+        return(randint(1, 7))
 pass
 
 def print_table(TABLE):
@@ -42,7 +53,8 @@ j = 0
 for i in range(42):
     board.append(" ")
 empty_list = [" "," "," "," "," "," "]
-p1 = ["X","X","X","X"]
+#p1 = ["X","X","X","X"]
+p1 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
 p2 = ["O","O","O","O"]
 #p1win = [board[35],board[36],board[37],board[38]]
 b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
@@ -71,42 +83,49 @@ if sys.argv[1] == "vs":
             for i in b1:
                 if b1 == empty_list:
                     board[35 - check1] = "X"
+                    board[35 - check1] = colored(board[35 - check1], 'red')
                     play = play + 1
             check1 = check1 + 7
         if val == "2":
             for i in b2:
                 if b2 == empty_list:
                     board[36 - check2] = "X"
+                    board[36 - check2] = colored(board[36 - check2], 'red')
                     play = play + 1
             check2 = check2 + 7
         if val == "3":
             for i in b3:
                 if b3 == empty_list:
                     board[37 - check3] = "X"
+                    board[37 - check3] = colored(board[37 - check3], 'red')
                     play = play + 1
             check3 = check3 + 7
         if val == "4":
             for i in b4:
                 if b4 == empty_list:
                     board[38 - check4] = "X"
+                    board[38 - check4] = colored(board[38 - check4], 'red')
                     play = play + 1
             check4 = check4 + 7
         if val == "5":
             for i in b5:
                 if b5 == empty_list:
                     board[39 - check5] = "X"
+                    board[39 - check5] = colored(board[39 - check5], 'red')
                     play = play + 1
             check5 = check5 + 7
         if val == "6":
             for i in b6:
                 if b6 == empty_list:
                     board[40 - check6] = "X"
+                    board[40 - check6] = colored(board[40 - check6], 'red')
                     play = play + 1
             check6 = check6 + 7
         if val == "7":
             for i in b7:
                 if b7 == empty_list:
                     board[41 - check7] = "X"
+                    board[41 - check7] = colored(board[41 - check7], 'red')
                     play = play + 1
             check7 = check7 + 7
     
@@ -213,42 +232,49 @@ if sys.argv[1] == "vs":
             for i in b1:
                 if b1 == empty_list:
                     board[35 - check1] = "O"
+                    board[35 - check1] = colored(board[35 - check1], 'yellow')
                     play = play + 1
             check1 = check1 + 7
         if val2 == "2":
             for i in b2:
                 if b2 == empty_list:
                     board[36 - check2] = "O"
+                    board[36 - check2] = colored(board[36 - check2], 'yellow')
                     play = play + 1
             check2 = check2 + 7
         if val2 == "3":
             for i in b3:
                 if b3 == empty_list:
                     board[37 - check3] = "O"
+                    board[37 - check3] = colored(board[37 - check3], 'yellow')
                     play = play + 1
             check3 = check3 + 7
         if val2 == "4":
             for i in b4:
                 if b4 == empty_list:
                     board[38 - check4] = "O"
+                    board[38 - check4] = colored(board[38 - check4], 'yellow')
                     play = play + 1
             check4 = check4 + 7
         if val2 == "5":
             for i in b5:
                 if b5 == empty_list:
                     board[39 - check5] = "O"
+                    board[39 - check5] = colored(board[39 - check5], 'yellow')
                     play = play + 1
             check5 = check5 + 7
         if val2 == "6":
             for i in b6:
                 if b6 == empty_list:
                     board[40 - check6] = "O"
+                    board[40 - check6] = colored(board[40 - check6], 'yellow')
                     play = play + 1
             check6 = check6 + 7
         if val2 == "7":
             for i in b7:
                 if b7 == empty_list:
                     board[41 - check7] = "O"
+                    board[41 - check7] = colored(board[41 - check7], 'yellow')
                     play = play + 1
             check7 = check7 + 7
         w = [board[35],board[36],board[37],board[38]]
@@ -356,45 +382,51 @@ if sys.argv[1] == "ia":
             for i in b1:
                 if b1 == empty_list:
                     board[35 - check1] = "X"
+                    board[35 - check1] = colored(board[35 - check1], 'red')
                     play = play + 1
             check1 = check1 + 7
         if val == "2":
             for i in b2:
                 if b2 == empty_list:
                     board[36 - check2] = "X"
+                    board[36 - check2] = colored(board[36 - check2], 'red')
                     play = play + 1
             check2 = check2 + 7
         if val == "3":
             for i in b3:
                 if b3 == empty_list:
                     board[37 - check3] = "X"
+                    board[37 - check3] = colored(board[37 - check3], 'red')
                     play = play + 1
             check3 = check3 + 7
         if val == "4":
             for i in b4:
                 if b4 == empty_list:
                     board[38 - check4] = "X"
+                    board[38 - check4] = colored(board[38 - check4], 'red')
                     play = play + 1
             check4 = check4 + 7
         if val == "5":
             for i in b5:
                 if b5 == empty_list:
                     board[39 - check5] = "X"
+                    board[39 - check5] = colored(board[39 - check5], 'red')
                     play = play + 1
             check5 = check5 + 7
         if val == "6":
             for i in b6:
                 if b6 == empty_list:
                     board[40 - check6] = "X"
+                    board[40 - check6] = colored(board[40 - check6], 'red')
                     play = play + 1
             check6 = check6 + 7
         if val == "7":
             for i in b7:
                 if b7 == empty_list:
                     board[41 - check7] = "X"
+                    board[41 - check7] = colored(board[41 - check7], 'red')
                     play = play + 1
             check7 = check7 + 7
-    
         w = [board[35],board[36],board[37],board[38]]
         w2 = [board[36],board[37],board[38],board[39]]
         w3 = [board[37],board[38],board[39],board[40]]
@@ -494,48 +526,55 @@ if sys.argv[1] == "ia":
             quit()
         print_board(board)
         val2 = 0
-        val2 = random_nbr()
+        val2 = random_nbr(1)
         print("L'IA a choisi la colonne %d" %(val2))
         if val2 == 1:
             for i in b1:
                 if b1 == empty_list:
                     board[35 - check1] = "O"
+                    board[35 - check1] = colored(board[35 - check1], 'yellow')
                     play = play + 1
             check1 = check1 + 7
         if val2 == 2:
             for i in b2:
                 if b2 == empty_list:
                     board[36 - check2] = "O"
+                    board[36 - check2] = colored(board[36 - check2], 'yellow')
                     play = play + 1
             check2 = check2 + 7
         if val2 == 3:
             for i in b3:
                 if b3 == empty_list:
                     board[37 - check3] = "O"
+                    board[37 - check3] = colored(board[37 - check3], 'yellow')
                     play = play + 1
             check3 = check3 + 7
         if val2 == 4:
             for i in b4:
                 if b4 == empty_list:
                     board[38 - check4] = "O"
+                    board[38 - check4] = colored(board[38 - check4], 'yellow')
                     play = play + 1
             check4 = check4 + 7
         if val2 == 5:
             for i in b5:
                 if b5 == empty_list:
                     board[39 - check5] = "O"
+                    board[39 - check5] = colored(board[39 - check5], 'yellow')
                     play = play + 1
             check5 = check5 + 7
         if val2 == 6:
             for i in b6:
                 if b6 == empty_list:
                     board[40 - check6] = "O"
+                    board[40 - check6] = colored(board[40 - check6], 'yellow')
                     play = play + 1
             check6 = check6 + 7
         if val2 == 7:
             for i in b7:
                 if b7 == empty_list:
                     board[41 - check7] = "O"
+                    board[41 - check7] = colored(board[41 - check7], 'yellow')
                     play = play + 1
             check7 = check7 + 7
         w = [board[35],board[36],board[37],board[38]]
@@ -629,7 +668,7 @@ if sys.argv[1] == "ia":
         w89 = [board[14],board[22],board[30],board[38]]
         if w == p2 or w2 == p2 or w3 == p2 or w4 == p2 or w5 == p2 or w6 == p2 or w7 == p2 or w8 == p2 or w9 == p2 or w10 == p2 or w11 == p2 or w12 == p2 or w13 == p2 or w14 == p2 or w15 == p2 or w16 == p2 or w17 == p2 or w18 == p2 or w19 == p2 or w20 == p2 or w21 == p2 or w22 == p2  or w23 == p2 or w24 == p2 or w25 == p2 or w26 == p2 or w27 == p2 or w28 == p2 or w29 == p2 or w30 == p2 or w31 == p2 or w32 == p2 or w33 == p2 or w34 == p2 or w35 == p2 or w36 == p2 or w37 == p2 or w38 == p2 or w39 == p2 or w40 == p2 or w41 == p2 or w42 == p2 or w43 == p2 or w44 == p2 or w45 == p2 or w46 == p2 or w47 == p2 or w48 == p2 or w49 == p2 or w50 == p2 or w51 == p2 or w52 == p2 or w53 == p2 or w54 == p2 or w55 == p2 or w56 == p2 or w57 == p2 or w58 == p2 or w59 == p2 or w60 == p2 or w61 == p2 or w62 == p2 or w63 == p2 or w64 == p2 or w65 == p2 or w66 == p2 or w67 == p2 or w68 == p2 or w69 == p2 or w70 == p2 or w71 == p2 or w72 == p2 or w73 == p2 or w74 == p2 or w75 == p2 or w76 == p2 or w77 == p2 or w78 == p2 or w79 == p2 or w80 == p2 or w81 == p2 or w82 == p2 or w83 == p2 or w84 == p2 or w85 == p2 or w86 == p2 or w87 == p2 or w88 == p2 or w89 == p2:
             print_board(board)
-            print("J2 tu as gagnes")
+            print("L'IA as gagnes")
             quit()
         if play == 294:
             print_board(board)
