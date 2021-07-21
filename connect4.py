@@ -21,9 +21,9 @@ system("clear")
 def print_blue(c):
     print("\033[1;34;40m%s  \n" % (c))
 
-def random_nbr(nb):
+def random_nbr(nb,res):
     if nb == 1:
-         return(randint(nb, nb + 1))
+         return(randint(res, res + 1))
     if nb != 1:
         return(randint(1, 7))
 pass
@@ -35,17 +35,20 @@ def print_table(TABLE):
         print()
     pass
 
-def print_board(list):
+def print_board(list,name1,name2,play):
+    n1 = colored(name1, 'red')
+    n2 = colored(name2, 'yellow')
+    p = colored(play, 'blue')
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[0],list[1],list[2],list[3],list[4],list[5],list[6]))
     print("|-----|-----|-----|-----|-----|-----|-----|")
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[7],list[8],list[9],list[10],list[11],list[12],list[13]))
     print("|-----|-----|-----|-----|-----|-----|-----|")
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[14],list[15],list[16],list[17],list[18],list[19],list[20]))
-    print("|-----|-----|-----|-----|-----|-----|-----|")
+    print("|-----|-----|-----|-----|-----|-----|-----|                %s VS %s" % (n1,n2))
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[21],list[22],list[23],list[24],list[25],list[26],list[27]))
     print("|-----|-----|-----|-----|-----|-----|-----|")
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[28],list[29],list[30],list[31],list[32],list[33],list[34]))
-    print("|-----|-----|-----|-----|-----|-----|-----|")
+    print("|-----|-----|-----|-----|-----|-----|-----|                Nombre de coups joué %s" % (p))
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[35],list[36],list[37],list[38],list[39],list[40],list[41]))
     print("   1     2     3     4     5     6     7   ")
 
@@ -78,16 +81,26 @@ check6 = 0
 check7 = 0
 #print(check1)
 play = 0
-print_board(board)
+if sys.argv[1] == "vs":
+    name1 = input("J1 choisi ton nom: ")
+    name2 = input("J2 choisi une nom: ")
+    n1 = colored(name1, 'red')
+    n2 = colored(name2, 'yellow')
+if sys.argv[1] == "ia":
+    name1 = input("J1 choisi ton nom: ")
+    name2 = "L'IA"
+    n1 = colored(name1, 'red')
+    n2 = colored(name2, 'yellow')
+print_board(board,name1,name2,play/12)
 if sys.argv[1] == "vs":
     while True:
-        val = input("J1 choisi une colonne: ")
+        val = input("%s choisi une colonne: " % (n1))
         if  check1 >= 42 and val == "1" or check2 >= 42 and val == "2" or check3 >= 42 and val == "3" or check4 >= 42 and val == "4" or check5 >= 42 and val == "5" or check6 >= 42 and val == "6" or check7 >= 42 and val == "7" :
             print("Erreur la colonne est pleine")
-            val = input("J1 choisi une colonne: ")
+            val = input("%s choisi une colonne: " % (n1))
         if int(val) < 1 or int(val) > 7:
             print("Erreur tu dois choisir entre parmis les colonnes 1 à 7")
-            val = input("J1 choisi une colonne: ")
+            val = input("%s choisi une colonne: " % (n1))
         if val == "1" and check1 <= 42:
             for i in b1:
                 if b1 == empty_list:
@@ -229,21 +242,21 @@ if sys.argv[1] == "vs":
         w89 = [board[14],board[22],board[30],board[38]]
        # print(check1)
         if w == p1 or w2 == p1 or w3 == p1 or w4 == p1 or w5 == p1 or w6 == p1 or w7 == p1 or w8 == p1 or w9 == p1 or w10 == p1 or w11 == p1 or w12 == p1 or w13 == p1 or w14 == p1 or w15 == p1 or w16 == p1 or w17 == p1 or w18 == p1 or w19 == p1 or w20 == p1 or w21 == p1 or w22 == p1  or w23 == p1 or w24 == p1 or w25 == p1 or w26 == p1 or w27 == p1 or w28 == p1 or w29 == p1 or w30 == p1 or w31 == p1 or w32 == p1 or w33 == p1 or w34 == p1 or w35 == p1 or w36 == p1 or w37 == p1 or w38 == p1 or w39 == p1 or w40 == p1 or w41 == p1 or w42 == p1 or w43 == p1 or w44 == p1 or w45 == p1 or w46 == p1 or w47 == p1 or w48 == p1 or w49 == p1 or w50 == p1 or w51 == p1 or w52 == p1 or w53 == p1 or w54 == p1 or w55 == p1 or w56 == p1 or w57 == p1 or w58 == p1 or w59 == p1 or w60 == p1 or w61 == p1 or w62 == p1 or w63 == p1 or w64 == p1 or w65 == p1 or w66 == p1 or w67 == p1 or w68 == p1 or w69 == p1 or w70 == p1 or w71 == p1 or w72 == p1 or w73 == p1 or w74 == p1 or w75 == p1 or w76 == p1 or w77 == p1 or w78 == p1 or w79 == p1 or w80 == p1 or w81 == p1 or w82 == p1 or w83 == p1 or w84 == p1 or w85 == p1 or w86 == p1 or w87 == p1 or w88 == p1 or w89 == p1:
-            print_board(board)
-            print("J1 tu as gagnes")
+            print_board(board,name1,name2,play/6)
+            print("%s tu as gagnes" % (n1))
             quit()
         if play == 252:
-            print_board(board)
+            print_board(board,name1,name2,play/6)
             print("Egalite")
             quit()
-        print_board(board)
-        val2 = input("J2 choisi une colonne: ")
+        print_board(board,name1,name2,play/6)
+        val2 = input("%s choisi une colonne: " % (n2))    
         if int(val2) < 1 or int(val2) > 7:
             print("Erreur tu dois choisir entre parmis les colonnes 1 à 7")
-            val2 = input("J2 choisi une colonne: ")
-            val2 = input("J2 choisi une colonne: ")
+            val2 = input("%s choisi une colonne: " % (n2))
         if  check1 >= 42 and val2 == "1" or check2 >= 42 and val2 == "2" or check3 >= 42 and val2 == "3" or check4 >= 42 and val2 == "4" or check5 >= 42 and val2 == "5" or check6 >= 42 and val2 == "6" or check7 >= 42 and val2 == "7" :
             print("Erreur la colonne est pleine")
+            val2 = input("%s choisi une colonne: " % (n2))
         if val2 == "1" and check1 <= 42:
             for i in b1:
                 if b1 == empty_list:
@@ -383,23 +396,23 @@ if sys.argv[1] == "vs":
         w88 = [board[15],board[23],board[31],board[39]]
         w89 = [board[14],board[22],board[30],board[38]]
         if w == p2 or w2 == p2 or w3 == p2 or w4 == p2 or w5 == p2 or w6 == p2 or w7 == p2 or w8 == p2 or w9 == p2 or w10 == p2 or w11 == p2 or w12 == p2 or w13 == p2 or w14 == p2 or w15 == p2 or w16 == p2 or w17 == p2 or w18 == p2 or w19 == p2 or w20 == p2 or w21 == p2 or w22 == p2  or w23 == p2 or w24 == p2 or w25 == p2 or w26 == p2 or w27 == p2 or w28 == p2 or w29 == p2 or w30 == p2 or w31 == p2 or w32 == p2 or w33 == p2 or w34 == p2 or w35 == p2 or w36 == p2 or w37 == p2 or w38 == p2 or w39 == p2 or w40 == p2 or w41 == p2 or w42 == p2 or w43 == p2 or w44 == p2 or w45 == p2 or w46 == p2 or w47 == p2 or w48 == p2 or w49 == p2 or w50 == p2 or w51 == p2 or w52 == p2 or w53 == p2 or w54 == p2 or w55 == p2 or w56 == p2 or w57 == p2 or w58 == p2 or w59 == p2 or w60 == p2 or w61 == p2 or w62 == p2 or w63 == p2 or w64 == p2 or w65 == p2 or w66 == p2 or w67 == p2 or w68 == p2 or w69 == p2 or w70 == p2 or w71 == p2 or w72 == p2 or w73 == p2 or w74 == p2 or w75 == p2 or w76 == p2 or w77 == p2 or w78 == p2 or w79 == p2 or w80 == p2 or w81 == p2 or w82 == p2 or w83 == p2 or w84 == p2 or w85 == p2 or w86 == p2 or w87 == p2 or w88 == p2 or w89 == p2:
-            print_board(board)
-            print("J2 tu as gagnes")
+            print_board(board,name1,name2,play/6)
+            print("%s tu as gagnes" % (n2))
             quit()
         if play == 252:
-            print_board(board)
+            print_board(board,name1,name2,play/6)
             print("Egalite")
             quit()
-        print_board(board)
+        print_board(board,name1,name2,play/6)
 if sys.argv[1] == "ia":
     while True:
-        val = input("J1 choisi une colonne: ")
+        val = input("%s choisi une colonne: " % (n1))
         if  check1 >= 42 and val == "1" or check2 >= 42 and val == "2" or check3 >= 42 and val == "3" or check4 >= 42 and val == "4" or check5 >= 42 and val == "5" or check6 >= 42 and val == "6" or check7 >= 42 and val == "7" :
             print("Erreur la colonne est pleine")
-            val = input("J1 choisi une colonne: ")
+            val = input("%s choisi une colonne: " % (n1))
         if int(val) < 1 or int(val) > 7:
             print("Erreur tu dois choisir entre parmis les colonnes 1 à 7")
-            val = input("J1 choisi une colonne: ")
+            val = input("%s choisi une colonne: " % (n1))    
         if val == "1":
             for i in b1:
                 if b1 == empty_list:
@@ -539,65 +552,67 @@ if sys.argv[1] == "ia":
         w88 = [board[15],board[23],board[31],board[39]]
         w89 = [board[14],board[22],board[30],board[38]]
         if w == p1 or w2 == p1 or w3 == p1 or w4 == p1 or w5 == p1 or w6 == p1 or w7 == p1 or w8 == p1 or w9 == p1 or w10 == p1 or w11 == p1 or w12 == p1 or w13 == p1 or w14 == p1 or w15 == p1 or w16 == p1 or w17 == p1 or w18 == p1 or w19 == p1 or w20 == p1 or w21 == p1 or w22 == p1  or w23 == p1 or w24 == p1 or w25 == p1 or w26 == p1 or w27 == p1 or w28 == p1 or w29 == p1 or w30 == p1 or w31 == p1 or w32 == p1 or w33 == p1 or w34 == p1 or w35 == p1 or w36 == p1 or w37 == p1 or w38 == p1 or w39 == p1 or w40 == p1 or w41 == p1 or w42 == p1 or w43 == p1 or w44 == p1 or w45 == p1 or w46 == p1 or w47 == p1 or w48 == p1 or w49 == p1 or w50 == p1 or w51 == p1 or w52 == p1 or w53 == p1 or w54 == p1 or w55 == p1 or w56 == p1 or w57 == p1 or w58 == p1 or w59 == p1 or w60 == p1 or w61 == p1 or w62 == p1 or w63 == p1 or w64 == p1 or w65 == p1 or w66 == p1 or w67 == p1 or w68 == p1 or w69 == p1 or w70 == p1 or w71 == p1 or w72 == p1 or w73 == p1 or w74 == p1 or w75 == p1 or w76 == p1 or w77 == p1 or w78 == p1 or w79 == p1 or w80 == p1 or w81 == p1 or w82 == p1 or w83 == p1 or w84 == p1 or w85 == p1 or w86 == p1 or w87 == p1 or w88 == p1 or w89 == p1:
-            print_board(board)
-            print("J1 tu as gagnes")
+            print_board(board,name1,name2,play/12)
+            val = input("%s choisi une colonne: " % (n1))
             quit()
         if play == 252:
-            print_board(board)
+            print_board(board,name1,name2,play/12)
             print("Egalite")
             quit()
-        print_board(board)
+            print_board(board,name1,name2,play/12)
         val2 = 0
-        val2 = random_nbr(1)
-        print("L'IA a choisi la colonne %d" %(val2))
+        val2 = random_nbr(1,int(val))
+        if  check1 >= 42 and val2 == 1 or check2 >= 42 and val2 == 2 or check3 >= 42 and val2 == 3 or check4 >= 42 and val2 == 4 or check5 >= 42 and val2 == 5 or check6 >= 42 and val2 == 6 or check7 >= 42 and val2 == 7 :
+            val2 = random_nbr(2,0)
+        print("%s a choisi la colonne %d" %(n2,val2))
         if val2 == 1:
             for i in b1:
                 if b1 == empty_list:
                     board[35 - check1] = "O"
                     board[35 - check1] = colored(board[35 - check1], 'yellow')
-                    play = play + 1
+                    play = play + 3
             check1 = check1 + 7
         if val2 == 2:
             for i in b2:
                 if b2 == empty_list:
                     board[36 - check2] = "O"
                     board[36 - check2] = colored(board[36 - check2], 'yellow')
-                    play = play + 1
+                    play = play + 3
             check2 = check2 + 7
         if val2 == 3:
             for i in b3:
                 if b3 == empty_list:
                     board[37 - check3] = "O"
                     board[37 - check3] = colored(board[37 - check3], 'yellow')
-                    play = play + 1
+                    play = play + 3
             check3 = check3 + 7
         if val2 == 4:
             for i in b4:
                 if b4 == empty_list:
                     board[38 - check4] = "O"
                     board[38 - check4] = colored(board[38 - check4], 'yellow')
-                    play = play + 1
+                    play = play + 3
             check4 = check4 + 7
         if val2 == 5:
             for i in b5:
                 if b5 == empty_list:
                     board[39 - check5] = "O"
                     board[39 - check5] = colored(board[39 - check5], 'yellow')
-                    play = play + 1
+                    play = play + 3
             check5 = check5 + 7
         if val2 == 6:
             for i in b6:
                 if b6 == empty_list:
                     board[40 - check6] = "O"
                     board[40 - check6] = colored(board[40 - check6], 'yellow')
-                    play = play + 1
+                    play = play + 3
             check6 = check6 + 7
         if val2 == 7:
             for i in b7:
                 if b7 == empty_list:
                     board[41 - check7] = "O"
                     board[41 - check7] = colored(board[41 - check7], 'yellow')
-                    play = play + 1
+                    play = play + 3
             check7 = check7 + 7
         w = [board[35],board[36],board[37],board[38]]
         w2 = [board[36],board[37],board[38],board[39]]
@@ -689,11 +704,12 @@ if sys.argv[1] == "ia":
         w88 = [board[15],board[23],board[31],board[39]]
         w89 = [board[14],board[22],board[30],board[38]]
         if w == p2 or w2 == p2 or w3 == p2 or w4 == p2 or w5 == p2 or w6 == p2 or w7 == p2 or w8 == p2 or w9 == p2 or w10 == p2 or w11 == p2 or w12 == p2 or w13 == p2 or w14 == p2 or w15 == p2 or w16 == p2 or w17 == p2 or w18 == p2 or w19 == p2 or w20 == p2 or w21 == p2 or w22 == p2  or w23 == p2 or w24 == p2 or w25 == p2 or w26 == p2 or w27 == p2 or w28 == p2 or w29 == p2 or w30 == p2 or w31 == p2 or w32 == p2 or w33 == p2 or w34 == p2 or w35 == p2 or w36 == p2 or w37 == p2 or w38 == p2 or w39 == p2 or w40 == p2 or w41 == p2 or w42 == p2 or w43 == p2 or w44 == p2 or w45 == p2 or w46 == p2 or w47 == p2 or w48 == p2 or w49 == p2 or w50 == p2 or w51 == p2 or w52 == p2 or w53 == p2 or w54 == p2 or w55 == p2 or w56 == p2 or w57 == p2 or w58 == p2 or w59 == p2 or w60 == p2 or w61 == p2 or w62 == p2 or w63 == p2 or w64 == p2 or w65 == p2 or w66 == p2 or w67 == p2 or w68 == p2 or w69 == p2 or w70 == p2 or w71 == p2 or w72 == p2 or w73 == p2 or w74 == p2 or w75 == p2 or w76 == p2 or w77 == p2 or w78 == p2 or w79 == p2 or w80 == p2 or w81 == p2 or w82 == p2 or w83 == p2 or w84 == p2 or w85 == p2 or w86 == p2 or w87 == p2 or w88 == p2 or w89 == p2:
-            print_board(board)
-            print("L'IA as gagnes")
+            print_board(board,name1,name2,play/12)
+            print("%s as gagnes" % (n2))
             quit()
         if play == 252:
-            print_board(board)
+            print_board(board,name1,name2,play/12)
             print("Egalite")
             quit()
-        print_board(board)
+        print_board(board,name1,name2,play/12)
+
