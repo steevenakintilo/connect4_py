@@ -79,6 +79,7 @@ check4 = 0
 check5 = 0
 check6 = 0
 check7 = 0
+draw = 0
 #print(check1)
 play = 0
 if sys.argv[1] == "vs":
@@ -193,7 +194,7 @@ if sys.argv[1] == "vs":
         w41 = [board[27],board[20],board[13],board[6]]
         w42 = [board[35],board[29],board[23],board[17]]
         w43 = [board[29],board[23],board[17],board[11]]
-        w44 = [board[23],board[17],board[11],board[4]]
+        w44 = [board[23],board[17],board[11],board[5]]
         w45 = [board[36],board[30],board[24],board[18]]
         w46 = [board[30],board[24],board[18],board[12]]
         w47 = [board[24],board[18],board[12],board[6]]
@@ -214,19 +215,19 @@ if sys.argv[1] == "vs":
         w62 = [board[38],board[30],board[22],board[14]]
         w63 = [board[34],board[26],board[18],board[10]]
         w64 = [board[26],board[18],board[10],board[2]]
-        w65 = [board[27],board[19],board[12],board[4]]
-        w66 = [board[6],board[11],board[16],board[21]]
-        w67 = [board[11],board[16],board[21],board[26]]
-        w68 = [board[16],board[21],board[26],board[31]]
-        w69 = [board[5],board[10],board[15],board[20]]
-        w70 = [board[10],board[15],board[20],board[25]]
-        w71 = [board[15],board[20],board[25],board[30]]
-        w72 = [board[4],board[9],board[14],board[19]]
-        w73 = [board[9],board[14],board[19],board[24]]
-        w74 = [board[3],board[8],board[13],board[18]]
-        w75 = [board[13],board[18],board[23],board[28]]
-        w76 = [board[18],board[23],board[28],board[33]]
-        w77 = [board[23],board[28],board[33],board[38]]
+        w65 = [board[27],board[19],board[11],board[3]]
+        w66 = [board[6],board[12],board[18],board[24]]
+        w67 = [board[12],board[18],board[24],board[30]]
+        w68 = [board[18],board[24],board[30],board[36]]
+        w69 = [board[5],board[11],board[17],board[23]]
+        w70 = [board[11],board[17],board[23],board[29]]
+        w71 = [board[17],board[23],board[29],board[35]]
+        w72 = [board[4],board[10],board[16],board[22]]
+        w73 = [board[10],board[16],board[22],board[28]]
+        w74 = [board[3],board[9],board[15],board[21]]
+        w75 = [board[13],board[19],board[25],board[31]]
+        w76 = [board[19],board[25],board[31],board[37]]
+        w77 = [board[35],board[36],board[37],board[38]]
         w78 = [board[0],board[8],board[16],board[24]]
         w79 = [board[8],board[16],board[24],board[32]]
         w80 = [board[16],board[24],board[32],board[40]]
@@ -348,7 +349,7 @@ if sys.argv[1] == "vs":
         w41 = [board[27],board[20],board[13],board[6]]
         w42 = [board[35],board[29],board[23],board[17]]
         w43 = [board[29],board[23],board[17],board[11]]
-        w44 = [board[23],board[17],board[11],board[4]]
+        w44 = [board[23],board[17],board[11],board[5]]
         w45 = [board[36],board[30],board[24],board[18]]
         w46 = [board[30],board[24],board[18],board[12]]
         w47 = [board[24],board[18],board[12],board[6]]
@@ -369,19 +370,19 @@ if sys.argv[1] == "vs":
         w62 = [board[38],board[30],board[22],board[14]]
         w63 = [board[34],board[26],board[18],board[10]]
         w64 = [board[26],board[18],board[10],board[2]]
-        w65 = [board[27],board[19],board[12],board[4]]
-        w66 = [board[6],board[11],board[16],board[21]]
-        w67 = [board[11],board[16],board[21],board[26]]
-        w68 = [board[16],board[21],board[26],board[31]]
-        w69 = [board[5],board[10],board[15],board[20]]
-        w70 = [board[10],board[15],board[20],board[25]]
-        w71 = [board[15],board[20],board[25],board[30]]
-        w72 = [board[4],board[9],board[14],board[19]]
-        w73 = [board[9],board[14],board[19],board[24]]
-        w74 = [board[3],board[8],board[13],board[18]]
-        w75 = [board[13],board[18],board[23],board[28]]
-        w76 = [board[18],board[23],board[28],board[33]]
-        w77 = [board[23],board[28],board[33],board[38]]
+        w65 = [board[27],board[19],board[11],board[3]]
+        w66 = [board[6],board[12],board[18],board[24]]
+        w67 = [board[12],board[18],board[24],board[30]]
+        w68 = [board[18],board[24],board[30],board[36]]
+        w69 = [board[5],board[11],board[17],board[23]]
+        w70 = [board[11],board[17],board[23],board[29]]
+        w71 = [board[17],board[23],board[29],board[35]]
+        w72 = [board[4],board[10],board[16],board[22]]
+        w73 = [board[10],board[16],board[22],board[28]]
+        w74 = [board[3],board[9],board[15],board[21]]
+        w75 = [board[13],board[19],board[25],board[31]]
+        w76 = [board[19],board[25],board[31],board[37]]
+        w77 = [board[35],board[36],board[37],board[38]]
         w78 = [board[0],board[8],board[16],board[24]]
         w79 = [board[8],board[16],board[24],board[32]]
         w80 = [board[16],board[24],board[32],board[40]]
@@ -393,7 +394,7 @@ if sys.argv[1] == "vs":
         w86 = [board[3],board[11],board[19],board[27]]
         w87 = [board[7],board[15],board[23],board[31]]
         w88 = [board[15],board[23],board[31],board[39]]
-        w89 = [board[14],board[22],board[30],board[38]]
+        w89 = [board[14],board[22],board[30],board[38]]    
         if w == p2 or w2 == p2 or w3 == p2 or w4 == p2 or w5 == p2 or w6 == p2 or w7 == p2 or w8 == p2 or w9 == p2 or w10 == p2 or w11 == p2 or w12 == p2 or w13 == p2 or w14 == p2 or w15 == p2 or w16 == p2 or w17 == p2 or w18 == p2 or w19 == p2 or w20 == p2 or w21 == p2 or w22 == p2  or w23 == p2 or w24 == p2 or w25 == p2 or w26 == p2 or w27 == p2 or w28 == p2 or w29 == p2 or w30 == p2 or w31 == p2 or w32 == p2 or w33 == p2 or w34 == p2 or w35 == p2 or w36 == p2 or w37 == p2 or w38 == p2 or w39 == p2 or w40 == p2 or w41 == p2 or w42 == p2 or w43 == p2 or w44 == p2 or w45 == p2 or w46 == p2 or w47 == p2 or w48 == p2 or w49 == p2 or w50 == p2 or w51 == p2 or w52 == p2 or w53 == p2 or w54 == p2 or w55 == p2 or w56 == p2 or w57 == p2 or w58 == p2 or w59 == p2 or w60 == p2 or w61 == p2 or w62 == p2 or w63 == p2 or w64 == p2 or w65 == p2 or w66 == p2 or w67 == p2 or w68 == p2 or w69 == p2 or w70 == p2 or w71 == p2 or w72 == p2 or w73 == p2 or w74 == p2 or w75 == p2 or w76 == p2 or w77 == p2 or w78 == p2 or w79 == p2 or w80 == p2 or w81 == p2 or w82 == p2 or w83 == p2 or w84 == p2 or w85 == p2 or w86 == p2 or w87 == p2 or w88 == p2 or w89 == p2:
             print_board(board,name1,name2,play/6)
             print("%s tu as gagnes" % (n2))
@@ -418,6 +419,7 @@ if sys.argv[1] == "ia":
                     board[35 - check1] = "X"
                     board[35 - check1] = colored(board[35 - check1], 'red')
                     play = play + 1
+                    draw = draw + 1
             check1 = check1 + 7
         if val == "2":
             for i in b2:
@@ -425,6 +427,7 @@ if sys.argv[1] == "ia":
                     board[36 - check2] = "X"
                     board[36 - check2] = colored(board[36 - check2], 'red')
                     play = play + 1
+                    draw = draw + 1
             check2 = check2 + 7
         if val == "3":
             for i in b3:
@@ -432,6 +435,7 @@ if sys.argv[1] == "ia":
                     board[37 - check3] = "X"
                     board[37 - check3] = colored(board[37 - check3], 'red')
                     play = play + 1
+                    draw = draw + 1
             check3 = check3 + 7
         if val == "4":
             for i in b4:
@@ -439,6 +443,7 @@ if sys.argv[1] == "ia":
                     board[38 - check4] = "X"
                     board[38 - check4] = colored(board[38 - check4], 'red')
                     play = play + 1
+                    draw = draw + 1
             check4 = check4 + 7
         if val == "5":
             for i in b5:
@@ -446,6 +451,7 @@ if sys.argv[1] == "ia":
                     board[39 - check5] = "X"
                     board[39 - check5] = colored(board[39 - check5], 'red')
                     play = play + 1
+                    draw = draw + 1
             check5 = check5 + 7
         if val == "6":
             for i in b6:
@@ -453,6 +459,7 @@ if sys.argv[1] == "ia":
                     board[40 - check6] = "X"
                     board[40 - check6] = colored(board[40 - check6], 'red')
                     play = play + 1
+                    draw = draw + 1
             check6 = check6 + 7
         if val == "7":
             for i in b7:
@@ -460,6 +467,7 @@ if sys.argv[1] == "ia":
                     board[41 - check7] = "X"
                     board[41 - check7] = colored(board[41 - check7], 'red')
                     play = play + 1
+                    draw = draw + 1
             check7 = check7 + 7
         w = [board[35],board[36],board[37],board[38]]
         w2 = [board[36],board[37],board[38],board[39]]
@@ -504,7 +512,7 @@ if sys.argv[1] == "ia":
         w41 = [board[27],board[20],board[13],board[6]]
         w42 = [board[35],board[29],board[23],board[17]]
         w43 = [board[29],board[23],board[17],board[11]]
-        w44 = [board[23],board[17],board[11],board[4]]
+        w44 = [board[23],board[17],board[11],board[5]]
         w45 = [board[36],board[30],board[24],board[18]]
         w46 = [board[30],board[24],board[18],board[12]]
         w47 = [board[24],board[18],board[12],board[6]]
@@ -525,19 +533,19 @@ if sys.argv[1] == "ia":
         w62 = [board[38],board[30],board[22],board[14]]
         w63 = [board[34],board[26],board[18],board[10]]
         w64 = [board[26],board[18],board[10],board[2]]
-        w65 = [board[27],board[19],board[12],board[4]]
-        w66 = [board[6],board[11],board[16],board[21]]
-        w67 = [board[11],board[16],board[21],board[26]]
-        w68 = [board[16],board[21],board[26],board[31]]
-        w69 = [board[5],board[10],board[15],board[20]]
-        w70 = [board[10],board[15],board[20],board[25]]
-        w71 = [board[15],board[20],board[25],board[30]]
-        w72 = [board[4],board[9],board[14],board[19]]
-        w73 = [board[9],board[14],board[19],board[24]]
-        w74 = [board[3],board[8],board[13],board[18]]
-        w75 = [board[13],board[18],board[23],board[28]]
-        w76 = [board[18],board[23],board[28],board[33]]
-        w77 = [board[23],board[28],board[33],board[38]]
+        w65 = [board[27],board[19],board[11],board[3]]
+        w66 = [board[6],board[12],board[18],board[24]]
+        w67 = [board[12],board[18],board[24],board[30]]
+        w68 = [board[18],board[24],board[30],board[36]]
+        w69 = [board[5],board[11],board[17],board[23]]
+        w70 = [board[11],board[17],board[23],board[29]]
+        w71 = [board[17],board[23],board[29],board[35]]
+        w72 = [board[4],board[10],board[16],board[22]]
+        w73 = [board[10],board[16],board[22],board[28]]
+        w74 = [board[3],board[9],board[15],board[21]]
+        w75 = [board[13],board[19],board[25],board[31]]
+        w76 = [board[19],board[25],board[31],board[37]]
+        w77 = [board[35],board[36],board[37],board[38]]
         w78 = [board[0],board[8],board[16],board[24]]
         w79 = [board[8],board[16],board[24],board[32]]
         w80 = [board[16],board[24],board[32],board[40]]
@@ -549,7 +557,7 @@ if sys.argv[1] == "ia":
         w86 = [board[3],board[11],board[19],board[27]]
         w87 = [board[7],board[15],board[23],board[31]]
         w88 = [board[15],board[23],board[31],board[39]]
-        w89 = [board[14],board[22],board[30],board[38]]
+        w89 = [board[14],board[22],board[30],board[38]]    
         print(w21)
         if w == p1 or w2 == p1 or w3 == p1 or w4 == p1 or w5 == p1 or w6 == p1 or w7 == p1 or w8 == p1 or w9 == p1 or w10 == p1 or w11 == p1 or w12 == p1 or w13 == p1 or w14 == p1 or w15 == p1 or w16 == p1 or w17 == p1 or w18 == p1 or w19 == p1 or w20 == p1 or w21 == p1 or w22 == p1  or w23 == p1 or w24 == p1 or w25 == p1 or w26 == p1 or w27 == p1 or w28 == p1 or w29 == p1 or w30 == p1 or w31 == p1 or w32 == p1 or w33 == p1 or w34 == p1 or w35 == p1 or w36 == p1 or w37 == p1 or w38 == p1 or w39 == p1 or w40 == p1 or w41 == p1 or w42 == p1 or w43 == p1 or w44 == p1 or w45 == p1 or w46 == p1 or w47 == p1 or w48 == p1 or w49 == p1 or w50 == p1 or w51 == p1 or w52 == p1 or w53 == p1 or w54 == p1 or w55 == p1 or w56 == p1 or w57 == p1 or w58 == p1 or w59 == p1 or w60 == p1 or w61 == p1 or w62 == p1 or w63 == p1 or w64 == p1 or w65 == p1 or w66 == p1 or w67 == p1 or w68 == p1 or w69 == p1 or w70 == p1 or w71 == p1 or w72 == p1 or w73 == p1 or w74 == p1 or w75 == p1 or w76 == p1 or w77 == p1 or w78 == p1 or w79 == p1 or w80 == p1 or w81 == p1 or w82 == p1 or w83 == p1 or w84 == p1 or w85 == p1 or w86 == p1 or w87 == p1 or w88 == p1 or w89 == p1:
             print_board(board,name1,name2,play/12)
@@ -571,6 +579,7 @@ if sys.argv[1] == "ia":
                     board[35 - check1] = "O"
                     board[35 - check1] = colored(board[35 - check1], 'yellow')
                     play = play + 3
+                    draw = draw + 1
             check1 = check1 + 7
         if val2 == 2:
             for i in b2:
@@ -578,6 +587,7 @@ if sys.argv[1] == "ia":
                     board[36 - check2] = "O"
                     board[36 - check2] = colored(board[36 - check2], 'yellow')
                     play = play + 3
+                    draw = draw + 1
             check2 = check2 + 7
         if val2 == 3:
             for i in b3:
@@ -585,6 +595,7 @@ if sys.argv[1] == "ia":
                     board[37 - check3] = "O"
                     board[37 - check3] = colored(board[37 - check3], 'yellow')
                     play = play + 3
+                    draw = draw + 1
             check3 = check3 + 7
         if val2 == 4:
             for i in b4:
@@ -592,6 +603,7 @@ if sys.argv[1] == "ia":
                     board[38 - check4] = "O"
                     board[38 - check4] = colored(board[38 - check4], 'yellow')
                     play = play + 3
+                    draw = draw + 1
             check4 = check4 + 7
         if val2 == 5:
             for i in b5:
@@ -599,6 +611,7 @@ if sys.argv[1] == "ia":
                     board[39 - check5] = "O"
                     board[39 - check5] = colored(board[39 - check5], 'yellow')
                     play = play + 3
+                    draw = draw + 1
             check5 = check5 + 7
         if val2 == 6:
             for i in b6:
@@ -606,6 +619,7 @@ if sys.argv[1] == "ia":
                     board[40 - check6] = "O"
                     board[40 - check6] = colored(board[40 - check6], 'yellow')
                     play = play + 3
+                    draw = draw + 1
             check6 = check6 + 7
         if val2 == 7:
             for i in b7:
@@ -613,6 +627,7 @@ if sys.argv[1] == "ia":
                     board[41 - check7] = "O"
                     board[41 - check7] = colored(board[41 - check7], 'yellow')
                     play = play + 3
+                    draw = draw + 1
             check7 = check7 + 7
         w = [board[35],board[36],board[37],board[38]]
         w2 = [board[36],board[37],board[38],board[39]]
@@ -657,7 +672,7 @@ if sys.argv[1] == "ia":
         w41 = [board[27],board[20],board[13],board[6]]
         w42 = [board[35],board[29],board[23],board[17]]
         w43 = [board[29],board[23],board[17],board[11]]
-        w44 = [board[23],board[17],board[11],board[4]]
+        w44 = [board[23],board[17],board[11],board[5]]
         w45 = [board[36],board[30],board[24],board[18]]
         w46 = [board[30],board[24],board[18],board[12]]
         w47 = [board[24],board[18],board[12],board[6]]
@@ -678,19 +693,19 @@ if sys.argv[1] == "ia":
         w62 = [board[38],board[30],board[22],board[14]]
         w63 = [board[34],board[26],board[18],board[10]]
         w64 = [board[26],board[18],board[10],board[2]]
-        w65 = [board[27],board[19],board[12],board[4]]
-        w66 = [board[6],board[11],board[16],board[21]]
-        w67 = [board[11],board[16],board[21],board[26]]
-        w68 = [board[16],board[21],board[26],board[31]]
-        w69 = [board[5],board[10],board[15],board[20]]
-        w70 = [board[10],board[15],board[20],board[25]]
-        w71 = [board[15],board[20],board[25],board[30]]
-        w72 = [board[4],board[9],board[14],board[19]]
-        w73 = [board[9],board[14],board[19],board[24]]
-        w74 = [board[3],board[8],board[13],board[18]]
-        w75 = [board[13],board[18],board[23],board[28]]
-        w76 = [board[18],board[23],board[28],board[33]]
-        w77 = [board[23],board[28],board[33],board[38]]
+        w65 = [board[27],board[19],board[11],board[3]]
+        w66 = [board[6],board[12],board[18],board[24]]
+        w67 = [board[12],board[18],board[24],board[30]]
+        w68 = [board[18],board[24],board[30],board[36]]
+        w69 = [board[5],board[11],board[17],board[23]]
+        w70 = [board[11],board[17],board[23],board[29]]
+        w71 = [board[17],board[23],board[29],board[35]]
+        w72 = [board[4],board[10],board[16],board[22]]
+        w73 = [board[10],board[16],board[22],board[28]]
+        w74 = [board[3],board[9],board[15],board[21]]
+        w75 = [board[13],board[19],board[25],board[31]]
+        w76 = [board[19],board[25],board[31],board[37]]
+        w77 = [board[35],board[36],board[37],board[38]]
         w78 = [board[0],board[8],board[16],board[24]]
         w79 = [board[8],board[16],board[24],board[32]]
         w80 = [board[16],board[24],board[32],board[40]]
@@ -707,7 +722,7 @@ if sys.argv[1] == "ia":
             print_board(board,name1,name2,play/12)
             print("%s as gagnes" % (n2))
             quit()
-        if play == 252:
+        if draw == 252:
             print_board(board,name1,name2,play/12)
             print("Egalite")
             quit()
