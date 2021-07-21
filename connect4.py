@@ -150,7 +150,6 @@ if sys.argv[1] == "vs":
                     board[41 - check7] = colored(board[41 - check7], 'red')
                     play = play + 1
             check7 = check7 + 7
-    
         w = [board[35],board[36],board[37],board[38]]
         w2 = [board[36],board[37],board[38],board[39]]
         w3 = [board[37],board[38],board[39],board[40]]
@@ -551,9 +550,10 @@ if sys.argv[1] == "ia":
         w87 = [board[7],board[15],board[23],board[31]]
         w88 = [board[15],board[23],board[31],board[39]]
         w89 = [board[14],board[22],board[30],board[38]]
+        print(w21)
         if w == p1 or w2 == p1 or w3 == p1 or w4 == p1 or w5 == p1 or w6 == p1 or w7 == p1 or w8 == p1 or w9 == p1 or w10 == p1 or w11 == p1 or w12 == p1 or w13 == p1 or w14 == p1 or w15 == p1 or w16 == p1 or w17 == p1 or w18 == p1 or w19 == p1 or w20 == p1 or w21 == p1 or w22 == p1  or w23 == p1 or w24 == p1 or w25 == p1 or w26 == p1 or w27 == p1 or w28 == p1 or w29 == p1 or w30 == p1 or w31 == p1 or w32 == p1 or w33 == p1 or w34 == p1 or w35 == p1 or w36 == p1 or w37 == p1 or w38 == p1 or w39 == p1 or w40 == p1 or w41 == p1 or w42 == p1 or w43 == p1 or w44 == p1 or w45 == p1 or w46 == p1 or w47 == p1 or w48 == p1 or w49 == p1 or w50 == p1 or w51 == p1 or w52 == p1 or w53 == p1 or w54 == p1 or w55 == p1 or w56 == p1 or w57 == p1 or w58 == p1 or w59 == p1 or w60 == p1 or w61 == p1 or w62 == p1 or w63 == p1 or w64 == p1 or w65 == p1 or w66 == p1 or w67 == p1 or w68 == p1 or w69 == p1 or w70 == p1 or w71 == p1 or w72 == p1 or w73 == p1 or w74 == p1 or w75 == p1 or w76 == p1 or w77 == p1 or w78 == p1 or w79 == p1 or w80 == p1 or w81 == p1 or w82 == p1 or w83 == p1 or w84 == p1 or w85 == p1 or w86 == p1 or w87 == p1 or w88 == p1 or w89 == p1:
             print_board(board,name1,name2,play/12)
-            val = input("%s choisi une colonne: " % (n1))
+            print("%s tu as gagné: " % (n1))
             quit()
         if play == 252:
             print_board(board,name1,name2,play/12)
