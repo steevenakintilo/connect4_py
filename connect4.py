@@ -9,14 +9,8 @@
 import sys
 from termcolor import colored, cprint
 from os import system
-#import os
-#os.system('')
 from random import randint
-#import os
 
-if len(sys.argv) == 1:
-    print("Le programme doit avoir au moins 1 arguments vs pour jouer contre un humain et ia pour jouer contre une ia")
-    sys.exit()
 system("clear")
 def print_blue(c):
     print("\033[1;34;40m%s  \n" % (c))
@@ -85,58 +79,14 @@ def print_board(list,name1,name2,play):
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[35],list[36],list[37],list[38],list[39],list[40],list[41]))
     print("   1     2     3     4     5     6     7   ")
 
-#T = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
-board = []
-j = 0
-for i in range(42):
-    board.append(" ")
-empty_list = [" "," "," "," "," "," "]
-#p1 = ["X","X","X","X"]
-p1 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
-p2 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
-#p1win = [board[35],board[36],board[37],board[38]]
-b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
-b2 =  [board[36],board[29],board[22],board[15],board[8],board[1]]
-b3 =  [board[37],board[30],board[23],board[16],board[9],board[2]]
-b4 =  [board[38],board[31],board[24],board[17],board[10],board[3]]
-b5 =  [board[39],board[32],board[25],board[18],board[11],board[4]]
-b6 =  [board[40],board[33],board[26],board[19],board[12],board[5]]
-b7 =  [board[41],board[34],board[27],board[20],board[13],board[6]]
-print(b1[0])
-i = 0
-idx = 0
-check1 = 0
-check2 = 0
-check3 = 0
-check4 = 0
-check5 = 0
-check6 = 0
-check7 = 0
-draw = 0
-#print(check1)
-play = 0
-if sys.argv[1] == "vs":
-    name1 = input("J1 choisi ton nom: ")
-    name2 = input("J2 choisi une nom: ")
-    n1 = colored(name1, 'red')
-    n2 = colored(name2, 'yellow')
-if sys.argv[1] == "ia":
-    name1 = input("J1 choisi ton nom: ")
-    name2 = "L'IA"
-    n1 = colored(name1, 'red')
-    n2 = colored(name2, 'yellow')
-print_board(board,name1,name2,play/12)
-#if sys.argv[1] == "vs":
 def connect4_vs():
     board = []
     j = 0
     for i in range(42):
         board.append(" ")
     empty_list = [" "," "," "," "," "," "]
-    #p1 = ["X","X","X","X"]
     p1 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
     p2 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
-    #p1win = [board[35],board[36],board[37],board[38]]
     b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
     b2 =  [board[36],board[29],board[22],board[15],board[8],board[1]]
     b3 =  [board[37],board[30],board[23],board[16],board[9],board[2]]
@@ -155,7 +105,6 @@ def connect4_vs():
     check6 = 0
     check7 = 0
     draw = 0
-    #print(check1)
     play = 0
     while True:
         val = input("%s choisi une colonne: " % (n1))
@@ -303,7 +252,6 @@ def connect4_vs():
         w87 = [board[7],board[15],board[23],board[31]]
         w88 = [board[15],board[23],board[31],board[39]]
         w89 = [board[14],board[22],board[30],board[38]]
-    # print(check1)
         if w == p1 or w2 == p1 or w3 == p1 or w4 == p1 or w5 == p1 or w6 == p1 or w7 == p1 or w8 == p1 or w9 == p1 or w10 == p1 or w11 == p1 or w12 == p1 or w13 == p1 or w14 == p1 or w15 == p1 or w16 == p1 or w17 == p1 or w18 == p1 or w19 == p1 or w20 == p1 or w21 == p1 or w22 == p1  or w23 == p1 or w24 == p1 or w25 == p1 or w26 == p1 or w27 == p1 or w28 == p1 or w29 == p1 or w30 == p1 or w31 == p1 or w32 == p1 or w33 == p1 or w34 == p1 or w35 == p1 or w36 == p1 or w37 == p1 or w38 == p1 or w39 == p1 or w40 == p1 or w41 == p1 or w42 == p1 or w43 == p1 or w44 == p1 or w45 == p1 or w46 == p1 or w47 == p1 or w48 == p1 or w49 == p1 or w50 == p1 or w51 == p1 or w52 == p1 or w53 == p1 or w54 == p1 or w55 == p1 or w56 == p1 or w57 == p1 or w58 == p1 or w59 == p1 or w60 == p1 or w61 == p1 or w62 == p1 or w63 == p1 or w64 == p1 or w65 == p1 or w66 == p1 or w67 == p1 or w68 == p1 or w69 == p1 or w70 == p1 or w71 == p1 or w72 == p1 or w73 == p1 or w74 == p1 or w75 == p1 or w76 == p1 or w77 == p1 or w78 == p1 or w79 == p1 or w80 == p1 or w81 == p1 or w82 == p1 or w83 == p1 or w84 == p1 or w85 == p1 or w86 == p1 or w87 == p1 or w88 == p1 or w89 == p1:
             print_board(board,name1,name2,play/6)
             print("%s tu as gagnes!!!" % (n1))
@@ -467,17 +415,14 @@ def connect4_vs():
             print("Egalite")
             restart(1)
         print_board(board,name1,name2,play/6)
-#if sys.argv[1] == "ia":
 def connect4_ia():
     board = []
     j = 0
     for i in range(42):
         board.append(" ")
     empty_list = [" "," "," "," "," "," "]
-    #p1 = ["X","X","X","X"]
     p1 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
     p2 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
-    #p1win = [board[35],board[36],board[37],board[38]]
     b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
     b2 =  [board[36],board[29],board[22],board[15],board[8],board[1]]
     b3 =  [board[37],board[30],board[23],board[16],board[9],board[2]]
@@ -496,7 +441,6 @@ def connect4_ia():
     check6 = 0
     check7 = 0
     draw = 0
-    #print(check1)
     play = 0
     while True:
         val = input("%s choisi une colonne: " % (n1))
@@ -822,7 +766,40 @@ def connect4_ia():
             print("Egalite")
             restart(2)
         print_board(board,name1,name2,play/12)
-if sys.argv[1] == "ia":
+
+board = []
+for i in range(42):
+    board.append(" ")
+print("=====  Connect%s  =====" % (colored('4', 'red')))
+print("                       ")
+print("1. 1V1")
+print("2. VS L'IA")
+print("3. QUITTER")
+print("                       ")
+print("                       ")
+choice = input("Choix:  ")
+chx = int(choice)
+if chx == 1:
+    system("clear")
+    name1 = input("J1 choisi ton nom: ")
+    name2 = input("J2 choisi une nom: ")
+    n1 = colored(name1, 'red')
+    n2 = colored(name2, 'yellow')
+    system("clear")
+if chx == 2:
+    system("clear")
+    name1 = input("J1 choisi ton nom: ")
+    name2 = "L'IA"
+    n1 = colored(name1, 'red')
+    n2 = colored(name2, 'yellow')
+    system("clear")
+if chx == 1:
+    print_board(board,name1,name2,0)
+if chx == 2:
+    print_board(board,name1,"L'IA",0)
+if chx == 2:
     connect4_ia()
-if sys.argv[1] == "vs":
+if chx == 1:
     connect4_vs()
+if chx == 3:
+    quit()
