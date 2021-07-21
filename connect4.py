@@ -569,7 +569,10 @@ if sys.argv[1] == "ia":
             quit()
             print_board(board,name1,name2,play/12)
         val2 = 0
-        val2 = random_nbr(1,int(val))
+        if int(val) != 7:
+            val2 = random_nbr(1,int(val))
+        if int(val) == 7:
+            val2 = 7
         if  check1 >= 42 and val2 == 1 or check2 >= 42 and val2 == 2 or check3 >= 42 and val2 == 3 or check4 >= 42 and val2 == 4 or check5 >= 42 and val2 == 5 or check6 >= 42 and val2 == 6 or check7 >= 42 and val2 == 7 :
             val2 = random_nbr(2,0)
         print("%s a choisi la colonne %d" %(n2,val2))
