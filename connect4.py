@@ -51,7 +51,10 @@ def restart(mod):
     for i in range(42):
         empty_board.append(" ")
     r = input("Appuie sur O pour rejouer et Q pour quitter: ")
+    if r != "Q" and r != "O":
+        quit()
     if r == "Q":
+        print("Bye")
         quit()
     if r == "O" and mod == 1:
         system("clear")
@@ -67,7 +70,6 @@ def restart(mod):
         print("%s a choisi la colonne: 4" %(n3))
         nprint_board(board,name1,"L'IA",0)
         connect4_ia(rdm)
-    
 def print_table(TABLE):
     for r in TABLE:
         for c in r:
@@ -1171,4 +1173,7 @@ if chx == 2:
 if chx == 1:
     connect4_vs()
 if chx == 3:
+    print("Bye")
+    quit()
+if chx != 1 and chx !=2 and chx != 3:
     quit()
