@@ -425,6 +425,7 @@ def connect4_ia():
     p3 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
     p21 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
     p2 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
+    p31 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
     b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
     b2 =  [board[36],board[29],board[22],board[15],board[8],board[1]]
     b3 =  [board[37],board[30],board[23],board[16],board[9],board[2]]
@@ -724,6 +725,26 @@ def connect4_ia():
         elif check2 <= 42 and (z60 == p3 or z61 == p3 or z62 == p3 or z63 == p3 or z64 == p3 or z65 == p3 or z66 == p3 or z67 == p3) and ival == 2:
             val2 = 2
         elif check3 <= 42 and (z70 == p3 or z71 == p3 or z72 == p3 or z73 == p3 or z74 == p3 or z75 == p3 or z76 == p3 or z77 == p3) and ival == 3:
+            val2 = 3
+        elif ival == 1 and (z10 == p31 or z11 == p31 or z12 == p31):
+            val2 = 1
+        elif ival == 2 and (z20 == p31 or z21 == p31 or z22 == p31):
+            val2 = 2
+        elif ival == 3 and (z30 == p31 or z31 == p31 or z32 == p31):
+            val2 = 3
+        elif ival == 4 and (z40 == p31 or z41 == p31 or z42 == p31 or z43 == p31 or z44 == p31 or z45 == p31 or z46 == p31 or z47 == p31):
+            val2 = 4
+        elif check5 <= 42 and (z50 == p31 or z51 == p31 or z52 == p31 or z53 == p31 or z54 == p31 or z55 == p31 or z56 == p31 or z57 == p31):
+            val2 = 5
+        elif check6 <= 42 and (z60 == p31 or z61 == p31 or z62 == p31 or z63 == p31 or z64 == p31 or z65 == p31 or z66 == p31 or z67 == p31):
+            val2 = 6
+        elif check7 <= 42 and (z70 == p31 or z71 == p31 or z72 == p31 or z73 == p31 or z74 == p31 or z75 == p31 or z76 == p31 or z77 == p31):
+            val2 = 7
+        elif check1 >= 42 and (z50 == p31 or z51 == p31 or z52 == p31 or z53 == p31 or z54 == p31 or z55 == p31 or z56 == p31 or z57 == p31):
+            val2 = 1
+        elif check2 <= 42 and (z60 == p31 or z61 == p31 or z62 == p31 or z63 == p31 or z64 == p31 or z65 == p31 or z66 == p31 or z67 == p31):
+            val2 = 2
+        elif check3 <= 42 and (z70 == p31 or z71 == p31 or z72 == p31 or z73 == p31 or z74 == p31 or z75 == p31 or z76 == p31 or z77 == p31):
             val2 = 3
         elif check4 <= 42 and (y44 == p21 or y45 == p21 or y46 == p21 or y47 == p21):
             val2 = 4
