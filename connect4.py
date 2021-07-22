@@ -422,6 +422,7 @@ def connect4_ia():
         board.append(" ")
     empty_list = [" "," "," "," "," "," "]
     p1 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
+    p3 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]    
     p2 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
     b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
     b2 =  [board[36],board[29],board[22],board[15],board[8],board[1]]
@@ -605,13 +606,85 @@ def connect4_ia():
             restart(2)
             print_board(board,name1,name2,play/12)
         val2 = 0
-        if int(val) != 7:
-            val2 = random_nbr(1,int(val))
-        if int(val) == 7:
+        #if int(val) != 7:
+        #    val2 = random_nbr(1,int(val))
+        #if int(val) == 7:
+        #    val2 = 7
+        #1
+        z10 = [board[35],board[28],board[21]]
+        z11 = [board[28],board[21],board[14]]
+        z12 = [board[21],board[14],board[7]]
+
+        #2
+        z20 = [board[36],board[29],board[22]]
+        z21 = [board[29],board[22],board[15]]
+        z22 = [board[22],board[15],board[8]]
+       
+        #3
+        z30 = [board[37],board[30],board[23]]
+        z31 = [board[30],board[23],board[16]]
+        z32 = [board[23],board[16],board[9]]
+       
+        #4
+        z40 = [board[35],board[36],board[37]]
+        z41 = [board[28],board[29],board[30]]
+        z42 = [board[21],board[22],board[23]]
+        z43 = [board[14],board[15],board[16]]
+        z44 = [board[7],board[8],board[9]]
+        z45 = [board[38],board[31],board[24]]
+        z46 = [board[31],board[24],board[17]]
+        z47 = [board[24],board[17],board[10]]
+
+        #5
+        z50 = [board[36],board[37],board[38]]
+        z51 = [board[29],board[30],board[31]]
+        z52 = [board[22],board[23],board[24]]
+        z53 = [board[15],board[16],board[17]]
+        z54 = [board[8],board[9],board[10]]
+        z55 = [board[39],board[32],board[25]]
+        z56 = [board[32],board[25],board[18]]
+        z57 = [board[25],board[18],board[11]]
+        
+        #6
+        z60 = [board[37],board[38],board[39]]
+        z61 = [board[30],board[31],board[32]]
+        z62 = [board[23],board[24],board[25]]
+        z63 = [board[16],board[17],board[18]]
+        z64 = [board[9],board[10],board[11]]
+        z65 = [board[40],board[33],board[26]]
+        z66 = [board[33],board[26],board[19]]
+        z67 = [board[26],board[19],board[12]]
+       
+        #7
+        z70 = [board[38],board[39],board[40]]
+        z71 = [board[31],board[32],board[33]]
+        z72 = [board[24],board[25],board[26]]
+        z73 = [board[17],board[18],board[19]]
+        z74 = [board[10],board[11],board[12]]
+        z75 = [board[41],board[34],board[27]]
+        z76 = [board[34],board[27],board[20]]
+        z77 = [board[27],board[20],board[13]]
+
+        if z10 == p3 or z11 == p3 or z12 == p3:
+            val2 = 1
+        elif z20 == p3 or z21 == p3 or z22 == p3:
+            val2 = 2
+        elif z30 == p3 or z31 == p3 or z32 == p3:
+            val2 = 3
+        elif z40 == p3 or z41 == p3 or z42 == p3 or z43 == p3 or z44 == p3 or z45 == p3 or z46 == p3 or z47 == p3:
+            val2 = 4
+        elif z50 == p3 or z51 == p3 or z52 == p3 or z53 == p3 or z54 == p3 or z55 == p3 or z56 == p3 or z57 == p3:
+            val2 = 5
+        elif z60 == p3 or z61 == p3 or z62 == p3 or z63 == p3 or z64 == p3 or z65 == p3 or z66 == p3 or z67 == p3:
+            val2 = 6
+        elif z70 == p3 or z71 == p3 or z72 == p3 or z73 == p3 or z74 == p3 or z75 == p3 or z76 == p3 or z77 == p3:
             val2 = 7
+        else:
+            val2 = random_nbr(2,0)
         while  check1 >= 42 and val2 == 1 or check2 >= 42 and val2 == 2 or check3 >= 42 and val2 == 3 or check4 >= 42 and val2 == 4 or check5 >= 42 and val2 == 5 or check6 >= 42 and val2 == 6 or check7 >= 42 and val2 == 7 :
             val2 = random_nbr(2,0)
         print("%s a choisi la colonne %d" %(n2,val2))
+        #print(check1,check2,check3,check4,check5,check6,check7)
         if val2 == 1:
             for i in b1:
                 if b1 == empty_list:
@@ -668,6 +741,7 @@ def connect4_ia():
                     play = play + 3
                     draw = draw + 1
             check7 = check7 + 7
+        
         w = [board[35],board[36],board[37],board[38]]
         w2 = [board[36],board[37],board[38],board[39]]
         w3 = [board[37],board[38],board[39],board[40]]
