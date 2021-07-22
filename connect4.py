@@ -18,7 +18,9 @@ def print_blue(c):
 def random_nbr(nb,res):
     if nb == 1:
          return(randint(res, res + 1))
-    if nb != 1:
+    if nb == 89:
+         return(randint(1,2))
+    if nb != 1 and nb != 89:
         return(randint(1, 7))
 pass
 
@@ -26,6 +28,10 @@ def print_empty_board(list,name1,name2,play):
     n1 = colored(name1, 'red')
     n2 = colored(name2, 'yellow')
     p = colored(play, 'blue')
+    if play == 4:
+        board[38 - check4] = "O"
+        board[38] = colored(board[38], 'yellow') 
+        play = 1
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[0],list[1],list[2],list[3],list[4],list[5],list[6]))
     print("|-----|-----|-----|-----|-----|-----|-----|")
     print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[7],list[8],list[9],list[10],list[11],list[12],list[13]))
@@ -41,6 +47,7 @@ def print_empty_board(list,name1,name2,play):
 
 def restart(mod):
     empty_board = []
+    rdm = random_nbr(89,0)
     for i in range(42):
         empty_board.append(" ")
     r = input("Appuie sur O pour rejouer et Q pour quitter: ")
@@ -50,17 +57,43 @@ def restart(mod):
         system("clear")
         print_empty_board(empty_board, name1, name2, 0)
         connect4_vs()
-    if r == "O" and mod == 2:
+    print(rdm)
+    if r == "O" and mod == 2 and rdm == 2:
         system("clear")
         print_empty_board(empty_board, name1, name2, 0)
-        connect4_ia()
-
+        connect4_ia(rdm)
+    if r == "O" and mod == 2 and rdm == 1:
+        system("clear")
+        print("%s a choisi la colonne: 4" %(n3))
+        nprint_board(board,name1,"L'IA",0)
+        connect4_ia(rdm)
+    
 def print_table(TABLE):
     for r in TABLE:
         for c in r:
             print(c,end = "   ")
         print()
     pass
+
+
+def nprint_board(list,name1,name2,play):
+    n1 = colored(name1, 'red')
+    n2 = colored(name2, 'yellow')
+    p = colored(play, 'blue')
+    play = 4
+    nn = colored('O', 'yellow')
+    print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[0],list[1],list[2],list[3],list[4],list[5],list[6]))
+    print("|-----|-----|-----|-----|-----|-----|-----|")
+    print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[7],list[8],list[9],list[10],list[11],list[12],list[13]))
+    print("|-----|-----|-----|-----|-----|-----|-----|")
+    print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[14],list[15],list[16],list[17],list[18],list[19],list[20]))
+    print("|-----|-----|-----|-----|-----|-----|-----|                %s VS %s" % (n1,n2))
+    print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[21],list[22],list[23],list[24],list[25],list[26],list[27]))
+    print("|-----|-----|-----|-----|-----|-----|-----|")
+    print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[28],list[29],list[30],list[31],list[32],list[33],list[34]))
+    print("|-----|-----|-----|-----|-----|-----|-----|                Nombre de coups joué %s" % (p))
+    print("|  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |  %s  |" % (list[35],list[36],list[37],nn,list[39],list[40],list[41]))
+    print("   1     2     3     4     5     6     7   ")
 
 def print_board(list,name1,name2,play):
     n1 = colored(name1, 'red')
@@ -415,7 +448,7 @@ def connect4_vs():
             print("Egalite")
             restart(1)
         print_board(board,name1,name2,play/6)
-def connect4_ia():
+def connect4_ia(r):
     board = []
     j = 0
     for i in range(42):
@@ -426,6 +459,7 @@ def connect4_ia():
     p21 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
     p2 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
     p31 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
+    db1 = [board[35],board[29],board[23],board[17],board[11],board[5]]
     b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
     b2 =  [board[36],board[29],board[22],board[15],board[8],board[1]]
     b3 =  [board[37],board[30],board[23],board[16],board[9],board[2]]
@@ -433,7 +467,6 @@ def connect4_ia():
     b5 =  [board[39],board[32],board[25],board[18],board[11],board[4]]
     b6 =  [board[40],board[33],board[26],board[19],board[12],board[5]]
     b7 =  [board[41],board[34],board[27],board[20],board[13],board[6]]
-    print(b1[0])
     i = 0
     idx = 0
     check1 = 0
@@ -445,6 +478,12 @@ def connect4_ia():
     check7 = 0
     draw = 0
     play = 0
+    dx = 0
+    if r == 1:
+        board[38 - check4] = "O"
+        board[38 - check4] = colored(board[38 - check4], 'yellow')
+        play = -12
+        check4 = 7               
     while True:
         val = input("%s choisi une colonne: " % (n1))
         if  check1 >= 42 and val == "1" or check2 >= 42 and val == "2" or check3 >= 42 and val == "3" or check4 >= 42 and val == "4" or check5 >= 42 and val == "5" or check6 >= 42 and val == "6" or check7 >= 42 and val == "7" :
@@ -704,6 +743,55 @@ def connect4_ia():
         y70 = [board[41],board[34]]
         y71 = [board[34],board[27]]
         y72 = [board[27],board[20]]
+        #8 DIAG2
+        d0 = [board[35],board[29],board[23]]
+        d1 = [board[29],board[23],board[17]]
+        d2 = [board[23],board[17],board[11]]
+        d3 = [board[36],board[30],board[24]]
+        d4 = [board[30],board[24],board[18]]
+        d5 = [board[24],board[18],board[12]]
+        d6 = [board[37],board[31],board[25]]
+        d7 = [board[31],board[25],board[19]]
+        d8 = [board[38],board[32],board[26]]
+        d9 = [board[28],board[22],board[16]]
+        d10 = [board[22],board[16],board[10]]
+        d11 = [board[21],board[15],board[9]]
+        d12 = [board[41],board[33],board[25]]
+        d13 = [board[33],board[25],board[17]]
+        d14 = [board[25],board[17],board[9]]
+        d15 = [board[40],board[32],board[24]]
+        d16 = [board[32],board[24],board[16]]
+        d17 = [board[24],board[16],board[8]]
+        d18 = [board[39],board[31],board[23]]
+        d19 = [board[31],board[23],board[15]]
+        d20 = [board[38],board[30],board[22]]
+        d21 = [board[34],board[26],board[18]]
+        d22 = [board[26],board[18],board[10]]
+        d23 = [board[27],board[19],board[11]]
+        d24 = [board[6],board[12],board[18]]
+        d25 = [board[12],board[18],board[24]]
+        d26 = [board[18],board[24],board[30]]
+        d27 = [board[5],board[11],board[17]]
+        d28 = [board[11],board[17],board[23]]
+        d29 = [board[17],board[23],board[29]]
+        d30 = [board[4],board[10],board[16]]
+        d31 = [board[10],board[16],board[22]]
+        d32 = [board[3],board[9],board[15]]
+        d33 = [board[13],board[19],board[25]]
+        d34 = [board[19],board[25],board[31]]
+        d35 = [board[35],board[36],board[37]]
+        d36 = [board[0],board[8],board[16]]
+        d37 = [board[8],board[16],board[24]]
+        d39 = [board[16],board[24],board[32]]
+        d40 = [board[1],board[9],board[17]]
+        d41 = [board[9],board[17],board[25]]
+        d42 = [board[17],board[25],board[33]]
+        d43 = [board[2],board[10],board[18]]
+        d45 = [board[10],board[18],board[26]]
+        d46 = [board[3],board[11],board[19]]
+        d47 = [board[7],board[15],board[23]]
+        d48 = [board[15],board[23],board[31]]
+        d49 = [board[14],board[22],board[30]]
 
         ival = int(val)
         if ival == 1 and (z10 == p3 or z11 == p3 or z12 == p3):
@@ -725,26 +813,6 @@ def connect4_ia():
         elif check2 <= 42 and (z60 == p3 or z61 == p3 or z62 == p3 or z63 == p3 or z64 == p3 or z65 == p3 or z66 == p3 or z67 == p3) and ival == 2:
             val2 = 2
         elif check3 <= 42 and (z70 == p3 or z71 == p3 or z72 == p3 or z73 == p3 or z74 == p3 or z75 == p3 or z76 == p3 or z77 == p3) and ival == 3:
-            val2 = 3
-        elif ival == 1 and (z10 == p31 or z11 == p31 or z12 == p31):
-            val2 = 1
-        elif ival == 2 and (z20 == p31 or z21 == p31 or z22 == p31):
-            val2 = 2
-        elif ival == 3 and (z30 == p31 or z31 == p31 or z32 == p31):
-            val2 = 3
-        elif ival == 4 and (z40 == p31 or z41 == p31 or z42 == p31 or z43 == p31 or z44 == p31 or z45 == p31 or z46 == p31 or z47 == p31):
-            val2 = 4
-        elif check5 <= 42 and (z50 == p31 or z51 == p31 or z52 == p31 or z53 == p31 or z54 == p31 or z55 == p31 or z56 == p31 or z57 == p31):
-            val2 = 5
-        elif check6 <= 42 and (z60 == p31 or z61 == p31 or z62 == p31 or z63 == p31 or z64 == p31 or z65 == p31 or z66 == p31 or z67 == p31):
-            val2 = 6
-        elif check7 <= 42 and (z70 == p31 or z71 == p31 or z72 == p31 or z73 == p31 or z74 == p31 or z75 == p31 or z76 == p31 or z77 == p31):
-            val2 = 7
-        elif check1 >= 42 and (z50 == p31 or z51 == p31 or z52 == p31 or z53 == p31 or z54 == p31 or z55 == p31 or z56 == p31 or z57 == p31):
-            val2 = 1
-        elif check2 <= 42 and (z60 == p31 or z61 == p31 or z62 == p31 or z63 == p31 or z64 == p31 or z65 == p31 or z66 == p31 or z67 == p31):
-            val2 = 2
-        elif check3 <= 42 and (z70 == p31 or z71 == p31 or z72 == p31 or z73 == p31 or z74 == p31 or z75 == p31 or z76 == p31 or z77 == p31):
             val2 = 3
         elif check4 <= 42 and (y44 == p21 or y45 == p21 or y46 == p21 or y47 == p21):
             val2 = 4
@@ -771,6 +839,136 @@ def connect4_ia():
         elif y60 == p21 or y61 == p21 or y62 == p21:
              val2 = 6
         elif y70 == p21 or y71 == p21 or y72 == p21:
+             val2 = 7
+        elif d0 == p3 and check4 >= 21:
+             val2 = 4
+        elif d1 == p3 and check5 >= 28:
+             val2 = 5
+        elif d2 == p3 and check6 >= 35:
+             val2 = 6
+        elif d3 == p3 and check5 >= 21:
+             val2 = 5
+        elif d4 == p3 and check5 >= 28:
+             val2 = 6
+        elif d5 == p3 and check6 >= 35:
+             val2 = 7
+        elif d6 == p3 and check6 >= 21:
+             val2 = 6
+        elif d7 == p3 and check7 >= 28:
+             val2 = 7
+        elif d8 == p3 and check7 >= 28:
+             val2 = 7
+        elif d9 == p3 and check4 >= 28:
+             val2 = 4
+        elif d10 == p3 and check5 >= 35:
+             val2 = 5
+        elif d11 == p3 and check4 >= 35:
+             val2 = 4
+        elif d12 == p3 and check4 >= 21:
+             val2 = 4
+        elif d13 == p3 and check3 >= 28:
+             val2 = 3
+        elif d14 == p3 and check2 >= 35:
+             val2 = 2
+        elif d15 == p3 and check3 >= 21:
+             val2 = 3
+        elif d16 == p3 and check2 >= 28:
+             val2 = 2
+        elif d17 == p3 and check1 >= 35:
+             val2 = 1
+        elif d18 == p3 and check2 >= 28:
+             val2 = 2
+        elif d19 == p3 and check1 >= 35:
+             val2 = 1
+        elif d20 == p3 and check1 >= 21:
+             val2 = 1
+        elif d21 == p3 and check4 >= 28:
+             val2 = 5
+        elif d22 == p3 and check3 >= 35:
+             val2 = 3
+        elif d23 == p3 and check4 >= 35:
+             val2 = 7
+        elif ival == 1 and (z10 == p31 or z11 == p31 or z12 == p31):
+            val2 = 1
+        elif ival == 2 and (z20 == p31 or z21 == p31 or z22 == p31):
+            val2 = 2
+        elif ival == 3 and (z30 == p31 or z31 == p31 or z32 == p31):
+            val2 = 3
+        elif ival == 4 and (z40 == p31 or z41 == p31 or z42 == p31 or z43 == p31 or z44 == p31 or z45 == p31 or z46 == p31 or z47 == p31):
+            val2 = 4
+        elif check5 <= 42 and (z50 == p31 or z51 == p31 or z52 == p31 or z53 == p31 or z54 == p31 or z55 == p31 or z56 == p31 or z57 == p31):
+            val2 = 5
+        elif check6 <= 42 and (z60 == p31 or z61 == p31 or z62 == p31 or z63 == p31 or z64 == p31 or z65 == p31 or z66 == p31 or z67 == p31):
+            val2 = 6
+        elif check7 <= 42 and (z70 == p31 or z71 == p31 or z72 == p31 or z73 == p31 or z74 == p31 or z75 == p31 or z76 == p31 or z77 == p31):
+            val2 = 7
+        elif check1 >= 42 and (z50 == p31 or z51 == p31 or z52 == p31 or z53 == p31 or z54 == p31 or z55 == p31 or z56 == p31 or z57 == p31):
+            val2 = 1
+        elif check2 <= 42 and (z60 == p31 or z61 == p31 or z62 == p31 or z63 == p31 or z64 == p31 or z65 == p31 or z66 == p31 or z67 == p31):
+            val2 = 2
+        elif check3 <= 42 and (z70 == p31 or z71 == p31 or z72 == p31 or z73 == p31 or z74 == p31 or z75 == p31 or z76 == p31 or z77 == p31):
+            val2 = 3
+        elif y30 == p31 or y31 == p31 or y32 == p31 or y33 == p31 or y34 == p31 or y35 == p31 or y36 == p31 or y37 == p31:
+             val2 = 3
+        elif y10 == p31 or y11 == p31 or y12 == p31:
+             val2 = 1
+        elif y20 == p31 or y21 == p31 or y22 == p31:
+             val2 = 2
+        elif y40 == p31 or y41 == p31 or y42 == p31 or y44 == p31:
+             val2 = 4
+        elif y50 == p31 or y51 == p31 or y52 == p31 or y53 == p31:
+             val2 = 5
+        elif y60 == p31 or y61 == p31 or y62 == p31:
+             val2 = 6
+        elif y70 == p31 or y71 == p31 or y72 == p31:
+             val2 = 7
+        elif d0 == p31 and check4 >= 21:
+             val2 = 4
+        elif d1 == p31 and check5 >= 28:
+             val2 = 5
+        elif d2 == p31 and check6 >= 35:
+             val2 = 6
+        elif d3 == p31 and check5 >= 21:
+             val2 = 5
+        elif d4 == p31 and check5 >= 28:
+             val2 = 6
+        elif d5 == p31 and check6 >= 35:
+             val2 = 7
+        elif d6 == p31 and check6 >= 21:
+             val2 = 6
+        elif d7 == p31 and check7 >= 28:
+             val2 = 7
+        elif d8 == p31 and check7 >= 28:
+             val2 = 7
+        elif d9 == p31 and check4 >= 28:
+             val2 = 4
+        elif d10 == p31 and check5 >= 35:
+             val2 = 5
+        elif d11 == p31 and check4 >= 35:
+             val2 = 4
+        elif d12 == p31 and check4 >= 21:
+             val2 = 4
+        elif d13 == p31 and check3 >= 28:
+             val2 = 3
+        elif d14 == p31 and check2 >= 35:
+             val2 = 2
+        elif d15 == p31 and check3 >= 21:
+             val2 = 3
+        elif d16 == p31 and check2 >= 28:
+             val2 = 2
+        elif d17 == p31 and check1 >= 35:
+             val2 = 1
+        elif d18 == p31 and check2 >= 28:
+             val2 = 2
+        elif d19 == p31 and check1 >= 35:
+             val2 = 1
+        elif d20 == p31 and check1 >= 21:
+             val2 = 1
+        elif d21 == p31 and check4 >= 28:
+             val2 = 5
+        elif d22 == p31 and check3 >= 35:
+             val2 = 3
+        elif d23 == p31 and check4 >= 35:
              val2 = 7
         else:
             print("OK")
@@ -833,8 +1031,7 @@ def connect4_ia():
                     board[41 - check7] = colored(board[41 - check7], 'yellow')
                     play = play + 3
                     draw = draw + 1
-            check7 = check7 + 7
-        
+            check7 = check7 + 7 
         w = [board[35],board[36],board[37],board[38]]
         w2 = [board[36],board[37],board[38],board[39]]
         w3 = [board[37],board[38],board[39],board[40]]
@@ -946,6 +1143,8 @@ print("                       ")
 print("                       ")
 choice = input("Choix:  ")
 chx = int(choice)
+rdm = random_nbr(89,0)
+n3 = colored("L'IA", 'yellow')
 if chx == 1:
     system("clear")
     name1 = input("J1 choisi ton nom: ")
@@ -962,10 +1161,13 @@ if chx == 2:
     system("clear")
 if chx == 1:
     print_board(board,name1,name2,0)
-if chx == 2:
+if chx == 2 and rdm == 2:
     print_board(board,name1,"L'IA",0)
+if chx == 2 and rdm == 1:
+    print("%s a choisi la colonne: 4" %(n3))
+    nprint_board(board,name1,"L'IA",0)
 if chx == 2:
-    connect4_ia()
+    connect4_ia(rdm)
 if chx == 1:
     connect4_vs()
 if chx == 3:
