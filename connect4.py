@@ -422,7 +422,8 @@ def connect4_ia():
         board.append(" ")
     empty_list = [" "," "," "," "," "," "]
     p1 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
-    p3 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]    
+    p3 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
+    p21 = ["\x1b[31mX\x1b[0m","\x1b[31mX\x1b[0m"]
     p2 = ["\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m","\x1b[33mO\x1b[0m"]
     b1 =  [board[35],board[28],board[21],board[14],board[7],board[0]]
     b2 =  [board[36],board[29],board[22],board[15],board[8],board[1]]
@@ -664,22 +665,136 @@ def connect4_ia():
         z75 = [board[41],board[34],board[27]]
         z76 = [board[34],board[27],board[20]]
         z77 = [board[27],board[20],board[13]]
+        
+        #1
+        y10 = [board[35],board[28]]
+        y11 = [board[28],board[21]]
+        y12 = [board[21],board[14]]
 
-        if z10 == p3 or z11 == p3 or z12 == p3:
+        #2
+        y20 = [board[36],board[29]]
+        y21 = [board[29],board[22]]
+        y22 = [board[22],board[15]]
+       
+        #3
+        y30 = [board[37],board[30]]
+        y31 = [board[30],board[23]]
+        y32 = [board[23],board[16]]
+        y33 = [board[35],board[36]]
+        y34 = [board[28],board[29]]
+        y35 = [board[21],board[22]]
+        y36 = [board[14],board[15]]
+        y37 = [board[7],board[8]]
+        
+        #4
+        y40 = [board[38],board[31]]
+        y41 = [board[31],board[24]]
+        y42 = [board[24],board[17]]
+        y43 = [board[36],board[37]]
+        y44 = [board[29],board[30]]
+        y45 = [board[22],board[23]]
+        y46 = [board[15],board[16]]
+        y47 = [board[8],board[9]]
+        
+        #5
+        y50 = [board[39],board[32]]
+        y51 = [board[32],board[25]]
+        y52 = [board[25],board[18]]
+        y53 = [board[40],board[41]]
+        y54 = [board[37],board[38]]
+        y55 = [board[30],board[31]]
+        y56 = [board[23],board[24]]
+        y57 = [board[16],board[17]]
+        y58 = [board[9],board[10]]
+        
+        #6
+        y60 = [board[40],board[33]]
+        y61 = [board[33],board[26]]
+        y62 = [board[26],board[19]]
+        y63 = [board[38],board[39]]
+        y64 = [board[31],board[32]]
+        y65 = [board[24],board[25]]
+        y66 = [board[17],board[18]]
+        y67 = [board[10],board[11]]
+        
+        #7
+        y70 = [board[41],board[34]]
+        y71 = [board[34],board[27]]
+        y72 = [board[27],board[20]]
+
+        ival = int(val)
+        #print(ival)
+        if ival == 1 and (z10 == p3 or z11 == p3 or z12 == p3):
             val2 = 1
-        elif z20 == p3 or z21 == p3 or z22 == p3:
+            print("CONDITION 1!")
+        elif ival == 2 and (z20 == p3 or z21 == p3 or z22 == p3):
             val2 = 2
-        elif z30 == p3 or z31 == p3 or z32 == p3:
+            print("CONDITION 2!")
+        elif ival == 3 and (z30 == p3 or z31 == p3 or z32 == p3):
             val2 = 3
-        elif z40 == p3 or z41 == p3 or z42 == p3 or z43 == p3 or z44 == p3 or z45 == p3 or z46 == p3 or z47 == p3:
+            print("CONDITION 3!")
+        elif ival == 4 and (z40 == p3 or z41 == p3 or z42 == p3 or z43 == p3 or z44 == p3 or z45 == p3 or z46 == p3 or z47 == p3):
             val2 = 4
-        elif z50 == p3 or z51 == p3 or z52 == p3 or z53 == p3 or z54 == p3 or z55 == p3 or z56 == p3 or z57 == p3:
+            print("CONDITION 4!")
+        elif check5 <= 42 and (z50 == p3 or z51 == p3 or z52 == p3 or z53 == p3 or z54 == p3 or z55 == p3 or z56 == p3 or z57 == p3) and ival == 5:
             val2 = 5
-        elif z60 == p3 or z61 == p3 or z62 == p3 or z63 == p3 or z64 == p3 or z65 == p3 or z66 == p3 or z67 == p3:
+            print("CONDITION 5!")
+        elif check6 <= 42 and (z60 == p3 or z61 == p3 or z62 == p3 or z63 == p3 or z64 == p3 or z65 == p3 or z66 == p3 or z67 == p3) and ival == 6:
             val2 = 6
-        elif z70 == p3 or z71 == p3 or z72 == p3 or z73 == p3 or z74 == p3 or z75 == p3 or z76 == p3 or z77 == p3:
+            print("CONDITION 6!")
+        elif check7 <= 42 and (z70 == p3 or z71 == p3 or z72 == p3 or z73 == p3 or z74 == p3 or z75 == p3 or z76 == p3 or z77 == p3) and ival == 7:
             val2 = 7
+            print("CONDITION 6!")
+        elif check1 >= 42 and (z50 == p3 or z51 == p3 or z52 == p3 or z53 == p3 or z54 == p3 or z55 == p3 or z56 == p3 or z57 == p3) and ival == 1:
+            val2 = 1
+            print("CONDITION 7!")
+        elif check2 <= 42 and (z60 == p3 or z61 == p3 or z62 == p3 or z63 == p3 or z64 == p3 or z65 == p3 or z66 == p3 or z67 == p3) and ival == 2:
+            val2 = 2
+            print("CONDITION 8!")
+        elif check3 <= 42 and (z70 == p3 or z71 == p3 or z72 == p3 or z73 == p3 or z74 == p3 or z75 == p3 or z76 == p3 or z77 == p3) and ival == 3:
+            val2 = 3
+            print("CONDITION 9!")
+        elif check4 <= 42 and (y44 == p21 or y45 == p21 or y46 == p21 or y47 == p21):
+            val2 = 4
+            print("CONDITION 10!")
+        elif check1 <= 42 and (y44 == p21 or y45 == p21 or y46 == p21 or y47 == p21):
+            val2 = 1
+            print("CONDITION 11!")
+        elif check2 <= 42 and (y54 == p21 or y55 == p21 or y56 == p21 or y57 == p21 or y58 == p21):
+            val2 = 2
+            print("CONDITION 12!")
+        elif check5 <= 42 and (y54 == p21 or y55 == p21 or y56 == p21 or y57 == p21 or y58 == p21):
+            val2 = 5
+            print("CONDITION 13!")
+        elif check6 <= 42 and (y63 == p21 or y64 == p21 or y65 == p21 or y66 == p21 or y67 == p21):
+            val2 = 6
+            print("CONDITION 14!")
+        elif check3 <= 42 and (y63 == p21 or y64 == p21 or y65 == p21 or y66 == p21 or y67 == p21):
+            val2 = 3
+            print("CONDITION 15!")
+        elif y30 == p21 or y31 == p21 or y32 == p21 or y33 == p21 or y34 == p21 or y35 == p21 or y36 == p21 or y37 == p21:
+             val2 = 3
+             print("CONDITION 16!")
+        elif y10 == p21 or y11 == p21 or y12 == p21:
+             val2 = 1
+             print("CONDITION 17!")
+        elif y20 == p21 or y21 == p21 or y22 == p21:
+             val2 = 2
+             print("CONDITION 18!")
+        elif y40 == p21 or y41 == p21 or y42 == p21 or y44 == p21:
+             val2 = 4
+             print("CONDITION 19!")
+        elif y50 == p21 or y51 == p21 or y52 == p21 or y53 == p21:
+             val2 = 5
+             print("CONDITION 20!")
+        elif y60 == p21 or y61 == p21 or y62 == p21:
+             val2 = 6
+             print("CONDITION 21!")
+        elif y70 == p21 or y71 == p21 or y72 == p21:
+             val2 = 7
+             print("CONDITION 22!")
         else:
+            print("OK")
             val2 = random_nbr(2,0)
         while  check1 >= 42 and val2 == 1 or check2 >= 42 and val2 == 2 or check3 >= 42 and val2 == 3 or check4 >= 42 and val2 == 4 or check5 >= 42 and val2 == 5 or check6 >= 42 and val2 == 6 or check7 >= 42 and val2 == 7 :
             val2 = random_nbr(2,0)
